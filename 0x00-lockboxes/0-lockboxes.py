@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+New function to unock boxex
+"""
 
 
 def canUnlockAll(boxes):
@@ -9,13 +12,9 @@ def canUnlockAll(boxes):
     Write a method that determines if all the boxes can be opened.
     '''
 
-    if boxes is None or len(boxes) is 0:
-        return False
-
     list_keys = [0]
     for i in list_keys:
-        box = boxes[i]
-        for j in box:  # recorro cada caja y anado las keys
+        for j in boxes[i]:  # recorro cada caja y anado las keys
             if j < len(boxes) and j not in list_keys:
                 list_keys.append(j)
         if len(list_keys) == len(boxes):
