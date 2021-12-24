@@ -93,7 +93,7 @@ heap_t *traversal(heap_t **root, int value)
 }
 
 /**
- * swap - if necessary, swaps the new_node node's value with it's parent's value
+ * swap - if necessary, swap value
  * @new_node: new_node node to swapt value with
  *
  * Return: a pointer to the modified value
