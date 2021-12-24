@@ -4,6 +4,7 @@
  * pop - delete the first node
  * @h_queue: pointer** to the first element of the queue
  */
+
 void pop(queue_t **h_queue)
 {
 	queue_t *temp = *h_queue;
@@ -18,6 +19,7 @@ void pop(queue_t **h_queue)
  * @node: node to insert in queue
  * Return: pointer to the new_node node
  */
+
 queue_t *insert(queue_t **h_queue, heap_t *node)
 {
 	queue_t *new_node;
@@ -41,7 +43,6 @@ queue_t *insert(queue_t **h_queue, heap_t *node)
 	return (new_node);
 }
 
-
 /**
  * traversal - level order traversal through queue
  * @root: double pointer to the start of the queue
@@ -57,6 +58,7 @@ heap_t *traversal(heap_t **root, int value)
 
 	if (!insert(&h_queue, *root))
 		return (NULL);
+
 	while (h_queue)
 	{
 		curr = h_queue->node;
