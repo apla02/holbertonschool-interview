@@ -1,20 +1,24 @@
 #!/usr/bin/python3
+"""This function is used to validated validUTF8"""
+
+
 def validUTF8(data):
-    counter = 0
-    for num in data:
-        mask = 0b10000000
-        if not counter:
-            while (mask & num):
-                counter += 1
-                mask >>= 1
-            if counter > 4:
+    """ Checks if a given data set represents a valid UTF-8 encoding """
+    c = 0
+    for n in data:
+        m = 0b10000000
+        if not c:
+            while (m & n):
+                c += 1
+                m >>= 1
+            if c > 4:
                 return False
-            if counter:
-                counter -= 1
-                if counter == 0:
+            if c:
+                c -= 1
+                if c == 0:
                     return False
-        elif counter > 0:
-            if num >> 6 != 2:
+        elif c > 0:
+            if n >> 6 != 2:
                 return False
-            counter -= 1
-    return not counter
+            c -= 1
+    return not c
